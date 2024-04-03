@@ -1,0 +1,47 @@
+.joinFormWrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgb(43, 240, 227);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.joinForm {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 70px;
+    border-radius: 4px;
+    width: 320px;
+    height: 350px;
+}
+.join {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+#form {
+    padding: 0px 50px;
+}
+span {
+    text-align: left;
+}
+#form input{
+    border: 5px solid white;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#btn input {
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    top: 65%;
+    left: 42%;
+    display: flex;
+    width: 150px;
+    background-color: gray;
+    border: white;
+    border-radius: 4px;
+    color: white;
+    height: 30px;
+}
