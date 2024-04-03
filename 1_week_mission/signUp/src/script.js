@@ -10,13 +10,6 @@ form.addEventListener("submit", (event) => {
 
   // Validation
   let isValid = true;
-  if (!validateName(name)) {
-    displayError("nameError", "Name must be a string");
-    isValid = false;
-  } else {
-    clearError("nameError");
-  }
-
   if (!validateEmail(email)) {
     displayError("emailError", "Invalid email address");
     isValid = false;
@@ -24,7 +17,21 @@ form.addEventListener("submit", (event) => {
     clearError("emailError");
   }
 
-  if (!validateAge(age)) {
+  if (!validateAge_integer(age)) {
+    displayError("ageError", "Age must be a positive integer greater than 18");
+    isValid = false;
+  } else {
+    clearError("ageError");
+  }
+
+  if (!validateAge_parseInt(age)) {
+    displayError("ageError", "Age must be a positive integer greater than 18");
+    isValid = false;
+  } else {
+    clearError("ageError");
+  }
+
+  if (!validateAge_min(age)) {
     displayError("ageError", "Age must be a positive integer greater than 18");
     isValid = false;
   } else {
@@ -32,6 +39,26 @@ form.addEventListener("submit", (event) => {
   }
 
   if (!validatePassword(password)) {
+    displayError(
+      "passwordError",
+      "Password must be between 4 and 12 characters long and contain English letters, numbers, and special characters."
+    );
+    isValid = false;
+  } else {
+    clearError("passwordError");
+  }
+
+  if (!validatePassword_min(password)) {
+    displayError(
+      "passwordError",
+      "Password must be between 4 and 12 characters long and contain English letters, numbers, and special characters."
+    );
+    isValid = false;
+  } else {
+    clearError("passwordError");
+  }
+
+  if (!validatePassword_max(password)) {
     displayError(
       "passwordError",
       "Password must be between 4 and 12 characters long and contain English letters, numbers, and special characters."
