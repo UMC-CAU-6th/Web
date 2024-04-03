@@ -79,7 +79,9 @@ const validateAge_min = (age) => {
 };
 
 const validatePassword = (password) => {
-  return /^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-])$/.test(password);
+  return /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()-_=+{}\[\];:'",<.>/?\\|]).*$/.test(
+    password
+  );
 };
 
 const validatePassword_min = (password) => {
