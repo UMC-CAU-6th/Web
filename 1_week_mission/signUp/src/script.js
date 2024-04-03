@@ -2,15 +2,14 @@ const form = document.getElementById("registrationForm");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // Prevent default form submission'
-  console.log("!");
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var age = document.getElementById("age").value;
-  var password = document.getElementById("password").value;
-  var confirmPassword = document.getElementById("confirmPassword").value;
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const age = document.getElementById("age").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
 
   // Validation
-  var isValid = true;
+  let isValid = true;
   if (!validateName(name)) {
     displayError("nameError", "Name must be a string");
     isValid = false;
@@ -57,48 +56,46 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-function validateName(name) {
+const validateName = (name) => {
   return typeof name === "string";
-}
+};
 
-function validateEmail(email) {
+const validateEmail = (email) => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+};
 
-function validateAge(age) {
+const validateAge = (age) => {
   return Number.isInteger(parseInt(age)) && age > 18;
-}
+};
 
-function validatePassword(password) {
+const validatePassword = (password) => {
   // Password must be between 4 and 12 characters long and contain English letters, numbers, and special characters.
   return /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,12}$/.test(
     password
   );
-}
+};
 
-function displayError(id, message) {
+const displayError = (id, message) => {
   document.getElementById(id).textContent = message;
-}
+};
 
-function clearError(id) {
+const clearError = (id) => {
   document.getElementById(id).textContent = "";
-}
+};
 
-document
-  .getElementById("registrationForm")
-  .addEventListener("input", function () {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var age = document.getElementById("age").value;
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+form.addEventListener("input", () => {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const age = document.getElementById("age").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
 
-    var isValid =
-      validateName(name) &&
-      validateEmail(email) &&
-      validateAge(age) &&
-      validatePassword(password) &&
-      password === confirmPassword;
+  const isValid =
+    name !== "" &&
+    email !== "" &&
+    age !== "" &&
+    password !== "" &&
+    confirmPassword !== "";
 
-    document.getElementById("signupButton").disabled = !isValid;
-  });
+  document.getElementById("signupButton").disabled = !isValid;
+});
