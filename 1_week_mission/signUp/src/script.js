@@ -1,64 +1,61 @@
-document
-  .getElementById("registrationForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission'
-    console.log("!");
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var age = document.getElementById("age").value;
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+const form = document.getElementById("registrationForm");
 
-    // Validation
-    var isValid = true;
-    if (!validateName(name)) {
-      displayError("nameError", "Name must be a string");
-      isValid = false;
-    } else {
-      clearError("nameError");
-    }
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevent default form submission'
+  console.log("!");
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var age = document.getElementById("age").value;
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
 
-    if (!validateEmail(email)) {
-      displayError("emailError", "Invalid email address");
-      isValid = false;
-    } else {
-      clearError("emailError");
-    }
+  // Validation
+  var isValid = true;
+  if (!validateName(name)) {
+    displayError("nameError", "Name must be a string");
+    isValid = false;
+  } else {
+    clearError("nameError");
+  }
 
-    if (!validateAge(age)) {
-      displayError(
-        "ageError",
-        "Age must be a positive integer greater than 18"
-      );
-      isValid = false;
-    } else {
-      clearError("ageError");
-    }
+  if (!validateEmail(email)) {
+    displayError("emailError", "Invalid email address");
+    isValid = false;
+  } else {
+    clearError("emailError");
+  }
 
-    if (!validatePassword(password)) {
-      displayError(
-        "passwordError",
-        "Password must be between 4 and 12 characters long and contain English letters, numbers, and special characters."
-      );
-      isValid = false;
-    } else {
-      clearError("passwordError");
-    }
+  if (!validateAge(age)) {
+    displayError("ageError", "Age must be a positive integer greater than 18");
+    isValid = false;
+  } else {
+    clearError("ageError");
+  }
 
-    if (password !== confirmPassword) {
-      displayError("confirmPasswordError", "Passwords do not match");
-      isValid = false;
-    } else {
-      clearError("confirmPasswordError");
-    }
+  if (!validatePassword(password)) {
+    displayError(
+      "passwordError",
+      "Password must be between 4 and 12 characters long and contain English letters, numbers, and special characters."
+    );
+    isValid = false;
+  } else {
+    clearError("passwordError");
+  }
 
-    if (isValid) {
-      console.log("Name:", name);
-      console.log("Email:", email);
-      console.log("Age:", age);
-      console.log("Password:", password);
-    }
-  });
+  if (password !== confirmPassword) {
+    displayError("confirmPasswordError", "Passwords do not match");
+    isValid = false;
+  } else {
+    clearError("confirmPasswordError");
+  }
+
+  if (isValid) {
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Age:", age);
+    console.log("Password:", password);
+  }
+});
 
 function validateName(name) {
   return typeof name === "string";
