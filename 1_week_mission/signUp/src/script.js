@@ -56,23 +56,34 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-const validateName = (name) => {
-  return typeof name === "string";
-};
-
 const validateEmail = (email) => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 };
 
-const validateAge = (age) => {
-  return Number.isInteger(parseInt(age)) && age > 18;
+const validateAge_integer = (age) => {
+  return Number.isInteger();
+};
+
+const validateAge_parseInt = (age) => {
+  return age > 0;
+};
+
+const validateAge_min = (age) => {
+  return age > 18;
 };
 
 const validatePassword = (password) => {
-  // Password must be between 4 and 12 characters long and contain English letters, numbers, and special characters.
-  return /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,12}$/.test(
+  return /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]$/.test(
     password
   );
+};
+
+const validatePassword_min = (password) => {
+  return password.length > 4;
+};
+
+const validatePassword_max = (password) => {
+  return password.length < 12;
 };
 
 const displayError = (id, message) => {
