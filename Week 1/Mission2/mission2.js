@@ -1,12 +1,7 @@
 document.getElementById('ip').addEventListener('keypress', function(e){
   var task = this.value;
-<<<<<<< HEAD
   if (e.key === 'Enter') {
     e.preventDefault(); 
-=======
-  if (e.key === 'Enter') {
-    e.preventDefault(); 
->>>>>>> fd49a1951c111b2d527a6b12ce9a4e59109e63a1
     addTask();
   }
 })
@@ -14,7 +9,7 @@ document.getElementById('ip').addEventListener('keypress', function(e){
 
 function addTask(){
 var input = document.getElementById("ip");
-var newTask = input.value.trim(); 
+var newTask = input.value.trim()     ; 
 
 if (newTask !== "") { 
   var listItem = document.createElement("li");
@@ -48,10 +43,6 @@ if (newTask !== "") {
   listItem.appendChild(completeButton);
   document.getElementById("list").appendChild(listItem);
   document.getElementById("list").appendChild(hr);
-<<<<<<< HEAD
   input.value = ""; 
-=======
-  input.value = ""; 
->>>>>>> fd49a1951c111b2d527a6b12ce9a4e59109e63a1
 }
 }
