@@ -1,0 +1,11 @@
+body {
+    background-color: #d6e6f5;
+}
+
+.warn{
+    color: red;
+}
+
+.info{
+    color: green;
+}
