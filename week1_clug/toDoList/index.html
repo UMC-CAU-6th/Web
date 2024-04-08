@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <br>
-        <p>
-            <h1>UMC Study Plan</h1>
-        </p>
-            <br><br>
-        <hr>
-        <input placeholder="스터디 계획을 작성해 보세요!">
-    </div>
-    <div class="list">
-        <div id="todo">
-            <h4>해야 할 일</h4>
-        </div>
-        <div id="complete">
-            <h4>해낸 일</h4>
+    <div id="container">
+        <h1>UMC Study Plan</h1>
+        <hr width="60%">
+        <input type="text">
+        <div id="wrapper">
+            <div class="do">
+                <span>해야 할 일</span>
+                <ul id="list"></ul>
+            </div>
+            <div class="do">
+                <span>해낸 일</span>
+                <ul id="complete"></ul>
+            </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
