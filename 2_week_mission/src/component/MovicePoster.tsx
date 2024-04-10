@@ -1,17 +1,13 @@
 import React, { useState } from "react";
-import "../style/MovicePosterGridStyles.css";
+import "../style/MovicePosterStyles.css";
+import { Movie } from "../types";
 
 const MovicePoster = ({
   title,
-  posterPath,
+  poster_path,
   overview,
-  voteAverage,
-}: {
-  title: string;
-  posterPath: string;
-  overview: string;
-  voteAverage: string;
-}) => {
+  vote_average,
+}: Movie) => {
   const baseURL = "https://image.tmdb.org/t/p/w200";
 
   const [overState, setOverState] = useState(false);
@@ -26,9 +22,9 @@ const MovicePoster = ({
         setOverState(false);
       }}
     >
-      <img src={baseURL + posterPath}></img>
+      <img src={baseURL + poster_path}></img>
       <div className="poster-title">{title}</div>
-      <div className="poster-voteAverage">{voteAverage}</div>
+      <div className="poster-voteAverage">{vote_average}</div>
       {overState ? (
         <div className="poster-detail-container">
           <div className="poster-title">{title}</div>

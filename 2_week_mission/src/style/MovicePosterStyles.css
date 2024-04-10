@@ -1,0 +1,14 @@
+.poster-container {
+  width: 200px;
+  height: 350px;
+
+  background-color: red;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.poster-title {
+  font-weight: bold;
+}
