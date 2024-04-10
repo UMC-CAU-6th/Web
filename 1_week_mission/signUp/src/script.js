@@ -20,7 +20,6 @@ form.addEventListener("submit", (event) => {
   }
 
   if (!validateAge_integer(age)) {
-    console.log(Number.isInteger(age));
     displayError("ageError", "나이가 정수가 아니면 어뜨케요.");
     isValid = false;
   } else if (!validateAge_parseInt(age)) {
