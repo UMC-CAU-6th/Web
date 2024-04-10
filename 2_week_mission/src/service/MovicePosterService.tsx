@@ -1,4 +1,6 @@
-export const getMovies = () => {
+import { Movies } from "../types";
+
+export const getMovies = (): Movies => {
   const movies = {
     dates: {
       maximum: "2023-09-17",
