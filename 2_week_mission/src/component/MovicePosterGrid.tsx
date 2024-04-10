@@ -22,11 +22,11 @@ const MovicePosterGrid = () => {
   }, []);
 
   return (
-    <>
+    <div className="poster-grid">
       {movies.results.map((movie: Movie) => (
         <MovicePoster {...movie} />
       ))}
-    </>
+    </div>
   );
 };
 
