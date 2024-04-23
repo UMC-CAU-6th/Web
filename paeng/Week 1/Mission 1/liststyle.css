@@ -1,0 +1,129 @@
+*{
+  text-align: center;
+}
+
+.back{
+  display: flex;
+  background-color: skyblue;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.back>div{
+background-color: rgb(191, 224, 237);
+width: 40vw;
+height: 90vh;
+background-position: 50% 50%;
+}
+
+hr{
+  border-color: white;
+  width: 30vw;
+  box-shadow: none;
+  border: 1px solid white;
+}
+
+input{
+  background-color: rgb(191, 224, 237);
+  color:black;
+  border: 1px solid white;
+  border-radius: 0.5em;
+  width: 250px;
+  height: 25px;
+  text-align: left;
+}
+
+label{
+  font-size: 14px;
+  transform: translate(-90px);
+  text-align: center;
+}
+
+.input-container{
+  position: relative; /* 컨테이너를 상대적 위치로 설정 */
+  display: inline-block; /* 블록 요소처럼 표시하지만, 필요한 만큼의 공간만 차지 */
+  margin: 1px; /* 필요에 따라 조정 */
+  text-align: center;
+  transform: translate(-90px);
+}
+
+.name{
+  transform: translate(-10px);
+}
+.age{
+  transform: translate(-10px);
+}
+.eml{
+  transform: translate(-5px);
+}
+.pwdcheck{
+  transform: translate(+15px);
+}
+.pwd{
+  transform: translate(+0px);
+}
+
+#join{
+  width: 180px;
+  height: 30px;
+  background-color: gray;
+  color: white;
+  border-radius: 0.3em;
+  border: none ;
+}
+
+.error-message{
+  color:red;
+  display: none;
+  font-size: 12px;
+  transform: translate(+180px);
+  text-align: left;
+}
+
+.ok-message{
+  color:green;
+  display: none;
+  font-size: 12px;
+  transform: translate(+180px);
+  text-align: left;
+}
+
+.default{
+  display: block;
+}
+
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  padding: 24px 16px;
+  border-radius: 4px;
+  width: 320px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal p {
+  font-size: 16px;
+}
+
+.close-wrapper {
+  text-align: right;
+}
