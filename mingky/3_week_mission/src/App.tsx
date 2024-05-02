@@ -5,6 +5,7 @@ import Navbar from "./component/Navbar";
 import Loading from "./component/Loading";
 
 const MovicePosterGrid = lazy(() => import("./component/MovicePosterGrid"));
+const Home = lazy(() => import("./page/home"));
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <RootRouter>
         <Routes>
           <Route path={"/movices"} element={<MovicePosterGrid />} />
+          <Route path={"/home"} element={<Home />} />
         </Routes>
       </RootRouter>
     </Suspense>
