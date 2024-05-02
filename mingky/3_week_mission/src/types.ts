@@ -16,10 +16,6 @@ export interface Movie {
 }
 
 export interface Movies {
-  dates: {
-    maximum: string;
-    minimum: string;
-  };
   page: number;
   results: Movie[];
   total_pages: number;
