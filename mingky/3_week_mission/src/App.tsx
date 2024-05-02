@@ -20,21 +20,21 @@ const App = () => {
             }
           />
           <Route
-            path={"/top_rated_movice"}
+            path={"/popular_movice"}
             element={
-              <MovicePosterGrid url="https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1" />
+              <MovicePosterGrid url="https://api.themoviedb.org/3/movie/popular?language=en-US&page=1" />
             }
           />
           <Route
-            path={"/top_rated_movice"}
+            path={"/now_playing_movice"}
             element={
-              <MovicePosterGrid url="https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1" />
+              <MovicePosterGrid url="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
             }
           />
           <Route
-            path={"/top_rated_movice"}
+            path={"/upcoming_movice"}
             element={
-              <MovicePosterGrid url="https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1" />
+              <MovicePosterGrid url="https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1" />
             }
           />
           <Route path={"/home"} element={<Home />} />
