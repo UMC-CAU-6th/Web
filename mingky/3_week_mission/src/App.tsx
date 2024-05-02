@@ -14,7 +14,25 @@ const App = () => {
       <RootRouter>
         <Routes>
           <Route
-            path={"/movices"}
+            path={"/top_rated_movice"}
+            element={
+              <MovicePosterGrid url="https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1" />
+            }
+          />
+          <Route
+            path={"/top_rated_movice"}
+            element={
+              <MovicePosterGrid url="https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1" />
+            }
+          />
+          <Route
+            path={"/top_rated_movice"}
+            element={
+              <MovicePosterGrid url="https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1" />
+            }
+          />
+          <Route
+            path={"/top_rated_movice"}
             element={
               <MovicePosterGrid url="https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1" />
             }
