@@ -1,0 +1,38 @@
+.title {
+  margin-top: 20vh;
+}
+
+.btn-wrapper {
+    display: flex;
+    /* justify-content: center;
+    margin-top: 5rem; */
+  }
+  
+  .modal-open-button{
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .modal-close-btn {
+    margin-left: 15rem; /* 버튼을 맨 오른쪽으로 이동 */
+    cursor: pointer;
+  }
+  
+  .modal-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #ffffff;
+    width: 300px;
+    height: 200px;
+    padding: 15px;
+  }
