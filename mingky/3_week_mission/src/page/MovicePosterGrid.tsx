@@ -32,7 +32,7 @@ const MovicePosterGrid = ({ url }: { url: string }) => {
         setMovies(response);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [url]);
 
   return (
     <div className="poster-grid">

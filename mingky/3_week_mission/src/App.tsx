@@ -5,7 +5,7 @@ import Navbar from "./component/Navbar";
 import Loading from "./component/Loading";
 
 const MovicePosterGrid = lazy(() => import("./page/MovicePosterGrid"));
-const Home = lazy(() => import("./page/home"));
+const Home = lazy(() => import("./page/HomePage"));
 
 const App = () => {
   return (

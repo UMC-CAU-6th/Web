@@ -1,13 +1,23 @@
 import styled from "@emotion/styled";
-
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isSignIn, setIsSignin] = useState<boolean>(false);
+
   return (
     <Container>
       <Link to="/home">
         <MainButton>UMC Movie</MainButton>
       </Link>
+
+      <Button
+        onClick={() => {
+          setIsSignin(!isSignIn);
+        }}
+      >
+        {isSignIn ? "Sign In" : "Sign Out"}
+      </Button>
 
       <Link to="/popular_movice">
         <Button>Popular</Button>
