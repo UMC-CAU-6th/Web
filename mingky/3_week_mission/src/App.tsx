@@ -10,8 +10,8 @@ const Home = lazy(() => import("./page/home"));
 const App = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <Navbar />
       <RootRouter>
+        <Navbar />
         <Routes>
           <Route
             path={"/top_rated_movice"}

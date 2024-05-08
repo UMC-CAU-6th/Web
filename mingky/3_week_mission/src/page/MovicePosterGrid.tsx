@@ -37,7 +37,7 @@ const MovicePosterGrid = ({ url }: { url: string }) => {
   return (
     <div className="poster-grid">
       {movies.results.map((movie: Movie) => (
-        <MovicePoster {...movie} />
+        <MovicePoster key={movie.id} {...movie} />
       ))}
     </div>
   );

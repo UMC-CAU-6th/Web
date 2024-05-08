@@ -1,13 +1,26 @@
 import styled from "@emotion/styled";
 
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <Container>
-      <MainButton>UMC Movie</MainButton>
-      <Button>Popular</Button>
-      <Button>Now Playing</Button>
-      <Button>Top Rated</Button>
-      <Button>Up Coming</Button>
+      <Link to="/home">
+        <MainButton>UMC Movie</MainButton>
+      </Link>
+
+      <Link to="/popular_movice">
+        <Button>Popular</Button>
+      </Link>
+      <Link to="/now_playing_movice">
+        <Button>Now Playing</Button>
+      </Link>
+      <Link to="/top_rated_movice">
+        <Button>Top Rated</Button>
+      </Link>
+      <Link to="/upcoming_movice">
+        <Button>Up Coming</Button>
+      </Link>
     </Container>
   );
 };
