@@ -4,8 +4,8 @@ import { BrowserRouter as RootRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar";
 import Loading from "./component/Loading";
 
-const MovicePosterGrid = lazy(() => import("./page/MovicePosterGrid"));
-const Home = lazy(() => import("./page/HomePage"));
+const MovicePosterGrid = lazy(() => import("./page/movies/MovivesPage"));
+const Home = lazy(() => import("./page/home/HomePage"));
 
 const App = () => {
   return (

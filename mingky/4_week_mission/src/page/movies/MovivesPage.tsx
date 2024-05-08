@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../style/MovicePosterGridStyles.css";
 
-import { getMovies } from "../service/MovicePosterService";
-import { Movies, Movie } from "../types";
-import MovicePoster from "../component/MovicePoster";
+import { getMovies } from "../../service/MovicePosterService";
+import { Movies, Movie } from "../../types";
+import MovicePoster from "../../component/MoviePoster";
 
 const options = {
   method: "GET",
