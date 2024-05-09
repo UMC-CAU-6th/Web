@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import "../style/MovicePosterGridStyles.css";
+import { useEffect, useState } from "react";
+import "../../style/MoviesPageStyles.css";
 
-import { getMovies } from "../../service/MovicePosterService";
 import { Movies, Movie } from "../../types";
 import MovicePoster from "../../component/MoviePoster";
 
@@ -13,7 +12,7 @@ const options = {
   },
 };
 
-const MovicePosterGrid = ({ url }: { url: string }) => {
+const MoviesPage = ({ url }: { url: string }) => {
   const [movies, setMovies] = useState<Movies>({
     page: 0,
     results: [],
@@ -24,10 +23,6 @@ const MovicePosterGrid = ({ url }: { url: string }) => {
   useEffect(() => {
     fetch(url, options)
       .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        return response;
-      })
       .then((response) => {
         setMovies(response);
       })
@@ -43,4 +38,4 @@ const MovicePosterGrid = ({ url }: { url: string }) => {
   );
 };
 
-export default MovicePosterGrid;
+export default MoviesPage;
