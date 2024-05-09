@@ -7,6 +7,7 @@ import Loading from "./component/Loading";
 const MoviesPage = lazy(() => import("./page/movies/MoviesPage"));
 const Movie = lazy(() => import("./page/movies/MoviePage"));
 const Home = lazy(() => import("./page/home/HomePage"));
+const Notfound = lazy(() => import("./page/auth/NotFoundPage"));
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <RootRouter>
         <Navbar />
         <Routes>
+          <Route path={"*"} element={<Notfound />} />
           <Route path={"/home"} element={<Home />} />
           <Route path={"/movie/:name"} element={<Movie />} />
           <Route

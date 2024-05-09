@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "@emotion/styled";
+import StarIcon from "@mui/icons-material/Star";
 
 import { Movie } from "../../types";
 
@@ -51,9 +52,15 @@ const MoviePage = () => {
       <img src={baseURL + movieState.poster_path}></img>
       <InfoContainer>
         <Title>{movieState.title}</Title>
-        <div>{movieState.vote_average}</div>
+        <div>
+          {[...Array(Math.floor(movieState.vote_average))].map(() => (
+            <StarIcon />
+          ))}
+        </div>
         <div>{movieState.release_date}</div>
-        <div>{movieState.overview}</div>
+        <div>
+          {movieState.overview == "" ? "no overview" : movieState.overview}
+        </div>
       </InfoContainer>
     </Container>
   );
