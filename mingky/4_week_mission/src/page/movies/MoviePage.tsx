@@ -9,8 +9,7 @@ const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NGNjNjVkYzZiOGFkZDliMzhmNGViNjllOWIyOTdhMCIsInN1YiI6IjY2M2M2N2E5ZTFiYTNhN2U0YmZhMjVjMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.tsAqFd5Q8JArOhTzqnqFTQG9ZZMXfE6OLtIhl5NOPH4",
+    Authorization: import.meta.env.VITE_SERVER_URL,
   },
 };
 
