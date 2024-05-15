@@ -1,0 +1,17 @@
+#container {
+    background-color: rgb(61, 42, 165);
+    height: 20;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+#title {
+    font-size: 4;
+    font-size: bold;
+}
+#panel {
+    text-decoration: none;
+    color:white;
+}
