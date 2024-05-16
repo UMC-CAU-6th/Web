@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "ns";
+  src: url(../public/font/NanumSquare_acR.ttf);
+}
+
+* {
+  font-family: "ns";
+}
