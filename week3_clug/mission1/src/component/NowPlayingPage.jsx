@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import Card from "./Card";
+import './css/NowPlayingPage.css'
+
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 const options = {
     method:"GET",
@@ -19,13 +21,26 @@ function NowPlayingPage(){
     .then((response) => response.json())
     .then((response) => setMovies(response.results))
     .catch((err) => console.error(err));
-
+    
     return (
-        <div>{movies.map((moviedata, index) => {
-            return <Card key={index} title={moviedata.title}/>
-        })}
+        <div className="wrap">
+          <ul>
+            {movies.map((movie, index) => (
+              <li key={movie.id}>
+                <div className={`poster poster${index}`}>
+                  <img
+                    src={`${IMAGE_BASE_URL}${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                  <div className="ov">{movie.overview}</div>
+                </div>
+                <br />
+                <div className="name">{movie.title}</div>
+              </li>
+            ))}
+          </ul>
         </div>
-    )
+      );
 }
 
 export default NowPlayingPage;

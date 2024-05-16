@@ -3,11 +3,15 @@
     color:white;
     height: 150px;
     text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 #text {
     color:white;
     font-weight: bolder;
     text-align: center;
+    padding:20px 20px;
 }
 .input {
     text-align: center;

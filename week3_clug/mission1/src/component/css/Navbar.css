@@ -5,7 +5,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-decoration: none;
 }
 #title {
     font-size: 4;
@@ -14,4 +13,13 @@
 #panel {
     text-decoration: none;
     color:white;
+    display:flex;
+}
+
+
+  
+.grow {
+    &:hover{
+        font-weight:bolder;
+    }
 }

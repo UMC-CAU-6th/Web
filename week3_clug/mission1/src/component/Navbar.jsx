@@ -1,4 +1,5 @@
 import "./css/Navbar.css"
+import {useState} from 'react'
 import {Link} from "react-router-dom";
 
 const buttonInfo = [
@@ -10,13 +11,27 @@ const buttonInfo = [
 ]
 
 function Navbar(){
+    const [isHovering, setIsHovering] = useState(false);
+
+    const handleMouseOver = () => {
+        setIsHovering(true);
+    };
+
+    const handleMouseOut = () => {
+        setIsHovering(false);
+    };
+
     return (
         <div id="container">
-            <div id="title">네비바</div>
+            <div id="title">
+                <Link to="/popular" style={{textDecoration:"none", color:"white"}}>UMC</Link>
+            </div>
             <div id="panel">
                 {buttonInfo.map((content, index) => {
                     return(
-                        <Link key={index} to={content.link} style={{textDecoration:"none", color:"white"}}>{content.name}</Link>
+                        <div className={isHovering ? "grow" : ""} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                            <Link key={index} to={content.link} style={{textDecoration:"none", color:"white"}}>{content.name}</Link>
+                        </div>
                     );
                 })}
             </div>
