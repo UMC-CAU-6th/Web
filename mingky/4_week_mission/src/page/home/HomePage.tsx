@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import Search from "../../component/Search";
+import { Suspense } from "react";
+import Loading from "../../component/Loading";
 
 const Home = () => {
   return (
@@ -7,7 +9,9 @@ const Home = () => {
       <HomeText>
         <div>환영합니다!!</div>
       </HomeText>
-      <Search />
+      <Suspense fallback={<Loading />}>
+        <Search />
+      </Suspense>
     </>
   );
 };

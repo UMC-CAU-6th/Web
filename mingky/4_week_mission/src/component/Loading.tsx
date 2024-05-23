@@ -1,21 +1,29 @@
 import styled from "@emotion/styled";
 
-import { MoonLoader } from "react-spinners";
+import { BarLoader } from "react-spinners";
 
 const Loading = () => {
   return (
     <LoadingWrapper>
-      <MoonLoader color="#cccccc" size={150} speedMultiplier={0.8} />
+      <BarLoader
+        color="rgb(12, 0, 238)"
+        speedMultiplier={1}
+        height={10}
+        width={200}
+      />
     </LoadingWrapper>
   );
 };
 
 export const LoadingWrapper = styled.div`
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export default Loading;

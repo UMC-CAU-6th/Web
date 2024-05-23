@@ -23,25 +23,33 @@ const Search = () => {
   const baseURL = "https://image.tmdb.org/t/p/w200";
 
   const [movieState, setMovieState] = useState<Movie | undefined>(undefined);
+  const [loading, setLoading] = useState(false);
+
+  if (loading) {
+    throw new Promise(() => {});
+  }
 
   return (
     <>
       <Input
         onChange={(event) => {
-          console.log(event.target.value);
           if (event.target.value === "") {
             debounce(() => {
               setMovieState(undefined);
             }, 1000)(event.target.value);
           } else {
             debounce((input: string) => {
+              setLoading(true);
               fetch(
                 `https://api.themoviedb.org/3/search/movie?query=${input}`,
                 options
               )
                 .then((response) => response.json())
                 .then((response) => setMovieState(response.results[0]))
-                .catch((err) => console.error(err));
+                .catch((err) => console.error(err))
+                .finally(() => {
+                  setLoading(false);
+                });
             }, 1000)(event.target.value);
           }
         }}
@@ -74,7 +82,7 @@ const Container = styled.div`
   flex-direction: row;
 
   position: absolute;
-  top: 460px;
+  top: 400px;
   left: 50%;
   transform: translate(-50%);
 
@@ -109,6 +117,8 @@ const Input = styled.input`
   border-radius: 30px;
 
   text-align: center;
+
+  z-index: 10;
 `;
 
 export default Search;

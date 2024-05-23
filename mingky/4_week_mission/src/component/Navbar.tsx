@@ -41,7 +41,7 @@ const Container = styled.div`
   top: 0px;
   left: 0px;
 
-  z-index: 3;
+  z-index: 11;
 
   display: flex;
   flex-direction: row;
