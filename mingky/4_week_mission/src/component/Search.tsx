@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import styled from "@emotion/styled";
 import StarIcon from "@mui/icons-material/Star";
+import { Movie } from "../types";
 
 const options = {
   method: "GET",
@@ -10,7 +11,7 @@ const options = {
   },
 };
 
-function debounce(func: (input: string) => void, wait: number) {
+function debounce(func: (input?: string) => void, wait: number) {
   let timeout: number;
   return function (input: string) {
     clearTimeout(timeout);
@@ -19,27 +20,33 @@ function debounce(func: (input: string) => void, wait: number) {
 }
 
 const Search = () => {
-  const [movieState, setMovieState] = useState<Movie>({
-    adult: false,
-    backdrop_path: null,
-    genre_ids: [],
-    id: 0,
-    original_language: "",
-    original_title: "",
-    overview: "",
-    popularity: 0,
-    poster_path: null,
-    release_date: "",
-    title: "",
-    video: false,
-    vote_average: 0,
-    vote_count: 0,
-  });
+  const baseURL = "https://image.tmdb.org/t/p/w200";
+
+  const [movieState, setMovieState] = useState<Movie | undefined>(undefined);
 
   return (
     <>
-      <Input></Input>
-      {movieState.id !== 0 ? (
+      <Input
+        onChange={(event) => {
+          console.log(event.target.value);
+          if (event.target.value === "") {
+            debounce(() => {
+              setMovieState(undefined);
+            }, 1000)(event.target.value);
+          } else {
+            debounce((input: string) => {
+              fetch(
+                `https://api.themoviedb.org/3/search/movie?query=${input}`,
+                options
+              )
+                .then((response) => response.json())
+                .then((response) => setMovieState(response.results[0]))
+                .catch((err) => console.error(err));
+            }, 1000)(event.target.value);
+          }
+        }}
+      ></Input>
+      {movieState != undefined ? (
         <Container>
           <img src={baseURL + movieState.poster_path}></img>
           <InfoContainer>
@@ -100,6 +107,8 @@ const Input = styled.input`
   height: 40px;
 
   border-radius: 30px;
+
+  text-align: center;
 `;
 
 export default Search;
