@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Search from "../../component/Search";
 
 const Home = () => {
   return (
@@ -6,6 +7,7 @@ const Home = () => {
       <HomeText>
         <div>환영합니다!!</div>
       </HomeText>
+      <Search />
     </>
   );
 };
