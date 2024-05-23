@@ -1,0 +1,41 @@
+<!--UMC chapter1 todo-->
+<!--24/04/04-->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo</title>
+</head>
+
+<body>
+    <h3>UMC Chap1</h3>
+    <h1>Mission. Todo List</h3>
+
+    <div>
+        <form id="input_form" onsubmit="return false">
+            <input id="input_box" type="text" autofocus placeholder="오늘은 무엇을 할까?" size=48/>
+        </form>
+    </div>
+
+    <div id="whole_wrapper" >
+        <div id="todo_wrapper" class="flex_item">
+            <div><b>해야 할 일</b></div>
+            <hr>
+            <ul id="todo_list">
+            </ul>
+        </div>
+        <div id="done_wrapper" class="flex_item">
+            <div><b>해낸 일</b></div>
+            <hr>
+            <ul id="done_list">
+            </ul>
+        </div>
+    </div>
+    
+</body>
+
+<script src="todo.js"></script>
+
+</html>
