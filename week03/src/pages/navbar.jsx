@@ -13,7 +13,7 @@ const pageList = [
 export default function NavbarPage() {
   return (
     <Navbar>
-      <NavLink to={"/main"}>MOVIE</NavLink>
+      <NavLink to={"/"}>MOVIE</NavLink>
       <Navigation>
         {pageList.map((el, index) => {
           return (

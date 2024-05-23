@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { movieUrl, movieOptions } from "./movieDB";
+import FetchMovie from "./movieDB";
 import { MovieList, MovieCard, MovieFooter } from "./style";
-const fetch = require("node-fetch");
+import LoadingPage from "../loading";
 
 export default function PopularPage() {
-  const [movieList, setMovieList] = useState([]);
-  useEffect(() => {
-    fetch(movieUrl("popular"), movieOptions)
-      .then((response) => response.json())
-      .then((response) => setMovieList(response.results))
-      .catch((err) => console.error(err));
-  }, []);
+  const { movieList, loading } = FetchMovie("popular");
+
+  if (loading) {
+    return <LoadingPage />;
+  }
 
   return (
     <MovieList>
       {movieList.map((el, index) => {
         return (
-          <MovieCard key={index} to={`/movie/detail/${el.title}`}>
+          <MovieCard
+            key={index}
+            to={`/movie/detail/${el.title}`}
+            state={{ movie: el }}
+          >
             <img
               src={`https://image.tmdb.org/t/p/original/${el.poster_path}`}
             />

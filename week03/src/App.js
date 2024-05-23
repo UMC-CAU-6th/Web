@@ -10,6 +10,7 @@ import SignInPage from "./pages/sign/signIn";
 import SignUpPage from "./pages/sign/signUp";
 import FooterPage from "./pages/footer";
 import MovieDetailPage from "./pages/movie/detail";
+import ErrorPage from "./pages/error";
 import "./global.css";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/movie/detail/:movieTitle" element={<MovieDetailPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <FooterPage />
     </BrowserRouter>
