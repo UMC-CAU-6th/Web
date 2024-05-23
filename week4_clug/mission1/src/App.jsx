@@ -17,8 +17,8 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/signup" element={<div>회원가입</div>}/>
-          <Route path="/popular" element={<PopularPage/>}/>
-          <Route path="/now" element={<NowPlayingPage/>}/>
+          <Route path="/popular" element={<PopularPage category={"/now_playing"}/>}/>
+          <Route path="/now" element={<NowPlayingPage category={"/now_playing"}/>}/>
           <Route path="/top" element={<TopRatedPage/>}/>
           <Route path="/upcoming" element={<Upcoming/>}/>
           <Route path="/" element={<MainPage/>}/>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
@@ -7,22 +7,23 @@ const options = {
     method:"GET",
     headers: {
         accept: "application/json",
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZGY5OWM3NzM2M2Q4YmYwNjVjZjZlMjEzMDFhMGY1NyIsInN1YiI6IjY2MzFmMjRlYTFjNTlkMDEyM2U2NjNiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6Bd2YsnxY8tMS7uDFzsWxY3adZ7zGppD5ZlCabk0a6Q',
-    }
+        Authorization: process.env.REACT_APP_API_KEY,
+    },
 };
 
-function PopularPage(){
+function PopularPage({category}){
+    console.log(process.env.REACT_APP_API_KEY);
     const [movies, setMovies] = useState([]);
     const navigate = useNavigate();
-
-    fetch(
+    useEffect(() => {
+      fetch(
         "https://api.themoviedb.org/3/movie/popular?language=ko-US&page=1",
         options
     )
     .then((response) => response.json())
     .then((response) => setMovies(response.results))
     .catch((err) => console.error(err));
-
+    }, [category]);
     const goToMoviePage=(movie)=>{
       navigate(`/movie/${movie.original_title}`, {state:{movie}});
     }
