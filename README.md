@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# Web
+Web팀
+=======
 # ⭐ UMC CAU 6th Web
 > 주 1회 워크북 진행 후 미션 코드 공유 및 피드백을 주고 받습니다.
 >
@@ -43,3 +47,4 @@
 | [![텍스트](https://avatars.githubusercontent.com/u/74509920?v=4)](https://github.com/jungwho) | [![텍스트](https://avatars.githubusercontent.com/u/165870984?v=4)](https://github.com/likemarch) | [![텍스트](https://avatars.githubusercontent.com/u/127924700?v=4)](https://github.com/juuuuone) | [![텍스트](https://avatars.githubusercontent.com/u/74491255?v=4)](https://github.com/jinyujin0602) |
 |:---:|:---:|:---:|:---:|
 | 후/송정후 | 코멧/이혜성 | 골팽이/조주원 | 지니/진유진 |
+>>>>>>> 22d939db613ca60ea14013b828018a6e76dab6ed
