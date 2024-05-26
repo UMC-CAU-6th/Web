@@ -1,45 +1,59 @@
-# ⭐ UMC CAU 6th Web
-> 주 1회 워크북 진행 후 미션 코드 공유 및 피드백을 주고 받습니다.
->
-> 스터디 기간 : 2024년 3월 ~ 6월
+# Git 설정하기
 
-<br>
+1. 깃 초기화
+```
+git init
+```
 
-## 📎 GitHub 사용법 및 규칙
-   > [깃허브 사용법 및 규칙](https://www.notion.so/makeus-challenge/Git-Hub-b54463cb25e2430bb5ec190d70490665?pvs=4)
+2. 깃 remote 연결하기
+```
+git remote add origin {깃허브 레포지토리 주소}
+```
 
-1. 자신의 브랜치에 프로젝트 업로드하기
-2. Main 브랜치로 PR(Pull Request) 올리기 (참고: [좋은 PR 작성하기](https://medium.com/hayanmind-tech-blog-kr/%EC%A2%8B%EC%9D%80-pr%EC%97%90-%EB%8C%80%ED%95%9C-%EB%8B%A8%EC%83%81-6586c3f757ac))
+3. 깃 최신 정보 불러오기
+```
+git pull origin {브랜치 이름}
+```
 
-- **Assignees(PR 담당자): 본인**
+4. 깃 새 브랜치 생성하기
+```
+git branch -M {브랜치 이름}
+```
 
-- **Labels: mission 🚀**
+5. 깃 브랜치 이동하기
+```
+git checkout {브랜치 이름}
+```
 
-<br>
+5. 깃에 파일 전체 추가하기
+```
+git add . 
+```
 
-## ✔ Commit Message Convention
-| 커밋명   | 내용                                        |
-| -------- | ------------------------------------------- |
-| FEAT     | 파일, 폴더, 새로운 기능 추가                |
-| FIX      | 버그 수정                                   |
-| DOCS     | README 등의 문서 수정                         |
-| STYLE    | 코드 형식, 정렬, 주석 등의 변경             |
-| REFACTOR | 코드 리팩토링                               |
-| TEST     | 테스트 코드 추가 및 수정                            |
-| CHORE    | 환경설정, 빌드 업무, 패키지 매니저 설정등.. |
-| HOTFIX   | 치명적이거나 급한 버그 수정                 |
-| REMOVE   | 사용하지 않는 변수, 파일 etc 삭제           |
+6. 깃에 특정 파일 추가하기
+```
+git add {파일이름}
+```
 
-- 예시: "[Feat] 로그인 API 연동"
+7. 깃 커밋하기
+```
+git commit -m "커밋 메시지"
+```
 
-<br>
-
-## 🍀 Members
-| [![텍스트](https://avatars.githubusercontent.com/u/135580919?v=4)](https://github.com/selfishAltruism) | [![텍스트](https://avatars.githubusercontent.com/u/68678755?v=4)](https://github.com/Jinho622) | [![텍스트](https://avatars.githubusercontent.com/u/102412616?v=4)](https://github.com/hyeonsoo0625) | [![텍스트](https://avatars.githubusercontent.com/u/72022985?v=4)](https://github.com/zxc534) |
-|:---:|:---:|:---:|:---:|
-| 밍키/강민규 | 루피/김진호 | 클러그/김현수 | 제리/송영범 |
+8. 깃 원격 저장소에 푸시하기
+```
+git push origin {브랜치 이름}
+```
 
 
-| [![텍스트](https://avatars.githubusercontent.com/u/74509920?v=4)](https://github.com/jungwho) | [![텍스트](https://avatars.githubusercontent.com/u/165870984?v=4)](https://github.com/likemarch) | [![텍스트](https://avatars.githubusercontent.com/u/127924700?v=4)](https://github.com/juuuuone) | [![텍스트](https://avatars.githubusercontent.com/u/74491255?v=4)](https://github.com/jinyujin0602) |
-|:---:|:---:|:---:|:---:|
-| 후/송정후 | 코멧/이혜성 | 골팽이/조주원 | 지니/진유진 |
+# React 설정하기
+
+1. 프로젝트 생성하기
+```
+npx create-react-app {프로젝트 이름}
+```
+
+2. 프로젝트 실행하기
+```
+npm run start
+```
