@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <title>Validation</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="join-wrapper">
+        <p id="join-title">회원가입</p>
+        <br>
+        <div id="input-wrapper">
+            <p class="input-title">이름</p>
+            <input class="join-input" id="input-name" onchange="changeName()" type="text" />
+            <p class="input-check" id="name-message" style="color: aliceblue">이름을 입력하시오.</p>
+
+            <p class="input-title">이메일</p>
+            <input class="join-input" id="input-email" onchange="changeEmail()" type="text" />
+            <p class="input-check" id="email-message" style="color: aliceblue">올바른 이메일이 아닙니다.</p>
+
+            <p class="input-title">나이</p>
+            <input class="join-input" id="input-age" onchange="changeAge()" type="text" />
+            <p class="input-check" id="age-message" style="color: aliceblue">나이를 입력하시오</p>
+
+            <p class="input-title">비밀번호</p>
+            <input class="join-input" id="input-pw" onchange="changePw()" type="password" />
+            <p class="input-check" id="pw-message" style="color: aliceblue">비밀번호를 입력하시오</p>
+
+            <p class="input-title">비밀번호 확인</p>
+            <input class="join-input" id="input-pw-check" onchange="changePwCheck()" type="password" />
+            <p class="input-check" id="pw-check-message" style="color: aliceblue">비밀번호가 일치하지 않습니다.</p>
+        </div>
+        <button id="join-button" disabled>가입하기</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
