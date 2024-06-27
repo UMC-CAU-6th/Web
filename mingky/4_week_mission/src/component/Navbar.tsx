@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -35,7 +36,7 @@ const Navbar = () => {
   );
 };
 
-const Container = styled.div`
+const basicContainer = css`
   position: fixed;
 
   top: 0px;
@@ -44,14 +45,32 @@ const Container = styled.div`
   z-index: 11;
 
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  width: 100%;
-  height: 50px;
-
   background-color: #000a7d;
+`;
+
+const responseContainer = css`
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    //display: none;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 1001px) {
+    flex-direction: row;
+
+    width: 100%;
+    height: 50px;
+  }
+`;
+
+const Container = styled.div`
+  ${basicContainer}
+  ${responseContainer}
 `;
 
 const Button = styled.button`
@@ -66,7 +85,14 @@ const Button = styled.button`
 const MainButton = styled(Button)`
   font-size: 30px;
 
-  margin-right: 800px;
+  @media (max-width: 1000px) {
+    margin-top: 30px;
+    margin-right: 0px;
+  }
+
+  @media (min-width: 1001px) {
+    margin-right: 800px;
+  }
 `;
 
 export default Navbar;
