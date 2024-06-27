@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(222, 252, 252);
+}
+#container {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 250px;
+    height: 480px;
+    border-radius: 2%;
+    position:absolute;
+    top:100px;
+    left: 450px;
+    padding: 50px 150px;
+    
+}
+hr {
+    text-align:center;
+    background-color:white;
+}
+#formTitle {
+    text-align: center;
+}
+span {
+    font-weight: 500;
+    text-align:left;
+}
+input {
+    border-width:0.1;
+    text-align: center;
+    width:250px;
+}
+#btn {
+    text-align: center;
+}
+button {
+    margin-top:10px;
+    background-color: gray;
+    border-radius: 5px;
+    border: none;
+    width:200px;
+    color: white;
+    height:30px;
+}
+
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: white;
+    padding: 24px 16px;
+    border-radius: 4px;
+    width: 320px;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal p {
+    font-size: 16px;
+}
+
+.close-wrapper {
+    text-align: right;
+}
